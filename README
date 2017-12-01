@@ -1,0 +1,25 @@
+Learning x86 assembly with nasm.
+
+Perhaps a good idea to start with SASM (assembler ide?)
+
+To debug assembeler in gdb remember:
+layout asm
+layout reg
+stepi
+nexti
+info reg (i r)
+x (examine memory)
+
+For vim configuration at least:
+set syntax=nasm
+
+
+The book "Programming from the ground up" follows the GAS assembler conventions. 
+In NASM everything is pretty much the same except:
+- the order of the operands is inverted
+- GAS uses movl <- appends "l" to the end, you dont need that in NASM
+- GAS comparisons "cmp r1, r2" are done with respect to r2, in NASM with respect to r1 (consistent)
+- read nasmdoc.pdf the section about NASM Language to get a good overview of how to use NASM
+- in NASM square brackets means: dereference what ever is the number inside, without brackets use pointer value.
+
+If wondering how to compile from command line see ./bare_build_asm.sh
